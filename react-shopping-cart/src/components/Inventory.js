@@ -3,14 +3,11 @@
  */
 
 import React from 'react';
+import AddProduct from './AddProduct';
 
 class Inventory extends React.Component {
   render() {
-    return (
-      <>
-        <p>Hello!</p>
-      </>
-    );
+    return <AddProduct addProduct={this.props.addProduct}></AddProduct>;
   }
 }
 

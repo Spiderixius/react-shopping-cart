@@ -23,9 +23,49 @@
   text-align: center;
 }
 
-/* Clear floats after the columns */
 .row:after {
   content: '';
   display: table;
   clear: both;
+}
+
+.product-form {
+  margin-bottom: 20px;
+  border: 1px solid #000;
+  overflow: hidden;
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+}
+.product-form input,
+.product-form textarea,
+.product-form select {
+  width: 33.33%;
+  padding: 10px;
+  line-height: 1;
+  font-size: 12;
+  border: 0;
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+  background: #fff;
+}
+.product-form input:focus,
+.product-form textarea:focus,
+.product-form select:focus {
+  outline: 0;
+  background: #cfaeae;
+}
+.product-form textarea {
+  width: 100%;
+}
+.product-form input:last-of-type {
+  width: 100%;
+}
+.product-form button {
+  width: 100%;
+  border: 0;
 }
