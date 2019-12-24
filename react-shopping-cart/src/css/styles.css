@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: myFirstFont;
+  src: url('Legothick.ttf');
+}
+
+.column {
+  float: left;
+  border: 1px solid black;
+  width: 33.33%;
+  padding: 10px;
+  min-height: 400px;
+}
+
+.column-title {
+  font-family: myFirstFont;
+  color: white;
+  background-color: red;
+  font-size: 50px;
+
+  text-align: center;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: '';
+  display: table;
+  clear: both;
+}
