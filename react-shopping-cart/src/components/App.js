@@ -1,4 +1,12 @@
+/**
+ * This the main app. Here we control anything related to the entire page such as states.
+ */
+
 import React from 'react';
+import sampleProducts from '../sample-products';
+import Products from './Products';
+import Basket from './Basket';
+import Inventory from './Inventory';
 
 class App extends React.Component {
   render() {
@@ -6,15 +14,15 @@ class App extends React.Component {
       <div className='row'>
         <div className='column'>
           <h2 className='column-title'>PRODUCTS</h2>
-          <p>Some text..</p>
+          <Products>{console.log(sampleProducts)}</Products>
         </div>
         <div className='column'>
           <h2 className='column-title'>BASKET</h2>
-          <p>Some text..</p>
+          <Basket></Basket>
         </div>
         <div className='column'>
           <h2 className='column-title'>INVENTORY</h2>
-          <p>Some text..</p>
+          <Inventory></Inventory>
         </div>
       </div>
     );
