@@ -7,7 +7,12 @@ import AddProduct from './AddProduct';
 
 class Inventory extends React.Component {
   render() {
-    return <AddProduct addProduct={this.props.addProduct}></AddProduct>;
+    return (
+      <>
+        <button onClick={this.props.loadSampleData}>Load Sample Data</button>
+        <AddProduct addProduct={this.props.addProduct}></AddProduct>
+      </>
+    );
   }
 }
 

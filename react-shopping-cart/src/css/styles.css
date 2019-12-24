@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 @font-face {
@@ -47,8 +48,6 @@
   border: 0;
   border-bottom: 1px solid #000;
   border-right: 1px solid #000;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   border-radius: 0;
   background: #fff;
@@ -68,4 +67,39 @@
 .product-form button {
   width: 100%;
   border: 0;
+}
+
+.product {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+.product-description {
+  margin: 0;
+  font-size: 30px;
+}
+.product .product-name {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.product .price {
+  font-size: 1.4rem;
+  justify-content: flex-end;
+}
+.product img {
+  float: left;
+  width: 150px;
+  margin-right: 1rem;
+}
+
+button[disabled],
+input[type='submit'][disabled] {
+  color: #d12028;
+  background: #fff;
+  border-color: #d12028;
+  transform: rotate(-10deg) scale(2) translateX(50%) translateY(-50%);
 }

@@ -5,7 +5,7 @@
 
 import React from 'react';
 import sampleProducts from '../sample-products';
-import Products from './Products';
+import Product from './Product';
 import Basket from './Basket';
 import Inventory from './Inventory';
 
@@ -26,12 +26,20 @@ class App extends React.Component {
     this.setState({ products });
   };
 
+  loadSampleData = () => {
+    this.setState({ products: sampleProducts });
+  };
+
   render() {
     return (
       <div className='row'>
         <div className='column'>
           <h2 className='column-title'>PRODUCTS</h2>
-          <Products>{console.log(sampleProducts)}</Products>
+          <ul className='products'>
+            {Object.keys(this.state.products).map(key => (
+              <Product key={key} data={this.state.products[key]} />
+            ))}
+          </ul>
         </div>
         <div className='column'>
           <h2 className='column-title'>BASKET</h2>
@@ -39,7 +47,7 @@ class App extends React.Component {
         </div>
         <div className='column'>
           <h2 className='column-title'>INVENTORY</h2>
-          <Inventory addProduct={this.addProduct}></Inventory>
+          <Inventory addProduct={this.addProduct} loadSampleData={this.loadSampleData}></Inventory>
         </div>
       </div>
     );
