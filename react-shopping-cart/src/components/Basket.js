@@ -17,7 +17,7 @@ class Basket extends React.Component {
     if (!isAvailable) {
       return <li key={key}>Sorry {product ? product.name : 'product'} is out of stock!</li>;
     }
-    return <li key={key}>{`${count} x ${product.name} = ${count * product.price} kr`}</li>;
+    return <li key={key}>{`${count} x ${product.name} ${count * product.price} kr`}</li>;
   };
 
   render() {
@@ -35,7 +35,7 @@ class Basket extends React.Component {
     }, 0);
 
     return (
-      <div>
+      <div className='basket'>
         <ul>{basketIDs.map(this.displayBasket)}</ul>
         <p>
           Total: <strong>{totalPrice}</strong> kr

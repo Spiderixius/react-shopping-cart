@@ -35,7 +35,9 @@ class AddProduct extends React.Component {
         </select>
         <textarea name='description' placeholder='Description' required ref={this.descriptionRef} />
         <input name='image' type='text' placeholder='Image' required ref={this.imageRef} />
-        <button type='submit'>Add Product</button>
+        <button className='main-button' type='submit'>
+          Add Product
+        </button>
       </form>
     );
   }

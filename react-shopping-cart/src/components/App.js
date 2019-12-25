@@ -9,6 +9,10 @@ import Product from './Product';
 import Basket from './Basket';
 import Inventory from './Inventory';
 
+import productLogo from '../logos/productLogo.png';
+import basketLogo from '../logos/basketLogo.png';
+import inventoryLogo from '../logos/inventoryLogo.png';
+
 class App extends React.Component {
   /** The state represented as an object. Contains the products and the basket. */
   state = {
@@ -52,20 +56,26 @@ class App extends React.Component {
     return (
       <div className='row'>
         <div className='column'>
-          <h2 className='column-title'>PRODUCTS</h2>
-          <ul className='products'>
-            {Object.keys(this.state.products).map(key => (
-              <Product key={key} id={key} data={this.state.products[key]} addToBasket={this.addToBasket} />
-            ))}
-          </ul>
+          <img className='column-title' src={productLogo} alt='products'></img>
+          <div className='column-content'>
+            <ul className='products'>
+              {Object.keys(this.state.products).map(key => (
+                <Product key={key} id={key} data={this.state.products[key]} addToBasket={this.addToBasket} />
+              ))}
+            </ul>
+          </div>
         </div>
         <div className='column'>
-          <h2 className='column-title'>BASKET</h2>
-          <Basket products={this.state.products} basket={this.state.basket} />
+          <img className='column-title basket' src={basketLogo} alt='basket'></img>
+          <div className='column-content'>
+            <Basket products={this.state.products} basket={this.state.basket} />
+          </div>
         </div>
         <div className='column'>
-          <h2 className='column-title'>INVENTORY</h2>
-          <Inventory addProduct={this.addProduct} loadSampleData={this.loadSampleData}></Inventory>
+          <img className='column-title' src={inventoryLogo} alt='inventory'></img>
+          <div className='column-content'>
+            <Inventory addProduct={this.addProduct} loadSampleData={this.loadSampleData}></Inventory>
+          </div>
         </div>
       </div>
     );

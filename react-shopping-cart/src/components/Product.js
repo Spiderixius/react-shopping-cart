@@ -17,7 +17,7 @@ class Product extends React.Component {
           <span className='product-price'>{price} kr</span>
         </h3>
         <p className='product-description'>{description}</p>
-        <button onClick={() => this.props.addToBasket(this.props.id)} disabled={!isAvailable}>
+        <button className='main-button' onClick={() => this.props.addToBasket(this.props.id)} disabled={!isAvailable}>
           {isAvailable ? 'Add To Basket' : 'Out of Stock!'}
         </button>
       </li>
