@@ -34,6 +34,18 @@ class App extends React.Component {
   };
 
   /**
+   * Edits the product by updating the state.
+   *
+   * @param key The key of the product field to edit.
+   * @param editProduct Contains the edited value.
+   */
+  editProduct = (key, editProduct) => {
+    const products = { ...this.state.products };
+    products[key] = editProduct;
+    this.setState({ products });
+  };
+
+  /**
    * Adds a product to basket state. This is accomplished by copying the current state and
    * appending to said state.
    *
@@ -58,6 +70,9 @@ class App extends React.Component {
         <div className='column'>
           <img className='column-title' src={productLogo} alt='products'></img>
           <div className='column-content'>
+            <button className='main-button' onClick={this.loadSampleData}>
+              Load Sample Data
+            </button>
             <ul className='products'>
               {Object.keys(this.state.products).map(key => (
                 <Product key={key} id={key} data={this.state.products[key]} addToBasket={this.addToBasket} />
@@ -74,7 +89,11 @@ class App extends React.Component {
         <div className='column'>
           <img className='column-title' src={inventoryLogo} alt='inventory'></img>
           <div className='column-content'>
-            <Inventory addProduct={this.addProduct} loadSampleData={this.loadSampleData}></Inventory>
+            <Inventory
+              addProduct={this.addProduct}
+              editProduct={this.editProduct}
+              products={this.state.products}
+            ></Inventory>
           </div>
         </div>
       </div>

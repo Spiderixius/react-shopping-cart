@@ -136,6 +136,10 @@ input[type='submit'][disabled] {
   cursor: not-allowed;
 }
 
+.remove-button {
+  background-color: red;
+}
+
 .basket {
   font-size: 30px;
 }
