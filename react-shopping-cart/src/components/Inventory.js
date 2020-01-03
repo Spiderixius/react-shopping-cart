@@ -1,7 +1,3 @@
-/**
- *
- */
-
 import React from 'react';
 import AddProduct from './AddProduct';
 import EditProduct from './EditProduct';
