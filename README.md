@@ -11,6 +11,8 @@ For the sake of conveniency everything is made on a single page with three colum
 ## 1 Install
 Navigate to `react-shopping-cart/react-shopping-cart/` in your prefered terminal run `npm install` this will install all the necessary elements needed in order to run the application.
 
+You will need [`NodeJS`](https://nodejs.org/en/download/) (version v12.13.1) and `npm` (version 6.13.4). `npm` is installed with NodeJS.
+
 ## 2 Run
 Navigate to `react-shopping-cart/react-shopping-cart/` in your prefered terminal run `npm start` this will start the application on your `localhost` at port `3000`. If said port is in use, you will be prompted to use a different port.
 
