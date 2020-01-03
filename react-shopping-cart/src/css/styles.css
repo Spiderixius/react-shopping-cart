@@ -128,7 +128,7 @@
 input[type='submit'][disabled] {
   color: white;
   background: red;
-  border-color: #d12028;
+  border-color: red;
   border: 2px;
   width: 100%;
   transform: rotate(-20deg) scale(1.3) translateX(0%) translateY(-100%);
@@ -136,10 +136,32 @@ input[type='submit'][disabled] {
   cursor: not-allowed;
 }
 
+.main-button {
+  transition: 1s;
+}
+
 .remove-button {
   background-color: red;
 }
 
+.remove-from-basket {
+  background-color: gold;
+  color: black;
+  float: right;
+  border-radius: 5px;
+  border: none;
+  transition: 0.2s;
+}
+.remove-from-basket:hover {
+  background-color: red;
+  color: white;
+  transition: 0.2s;
+}
+
 .basket {
   font-size: 30px;
+}
+
+.basket-line {
+  border-bottom: black 2px solid;
 }

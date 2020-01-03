@@ -52,7 +52,7 @@ class App extends React.Component {
    */
   deleteProduct = key => {
     const products = { ...this.state.products };
-    products[key] = null;
+    delete products[key];
     this.setState({ products });
   };
 
@@ -65,6 +65,18 @@ class App extends React.Component {
   addToBasket = key => {
     const basket = { ...this.state.basket };
     basket[key] = basket[key] + 1 || 1;
+    this.setState({ basket });
+  };
+
+  /**
+   * Deletes a product from basket state. This is accomplished by copying the current state and
+   * appending to said state.
+   *
+   * @param key The identifier of the product to be deleted from basket.
+   */
+  deleteFromBasket = key => {
+    const basket = { ...this.state.basket };
+    delete basket[key];
     this.setState({ basket });
   };
 
@@ -94,7 +106,11 @@ class App extends React.Component {
         <div className='column'>
           <img className='column-title basket' src={basketLogo} alt='basket'></img>
           <div className='column-content'>
-            <Basket products={this.state.products} basket={this.state.basket} />
+            <Basket
+              products={this.state.products}
+              basket={this.state.basket}
+              deleteFromBasket={this.deleteFromBasket}
+            />
           </div>
         </div>
         <div className='column'>

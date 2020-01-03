@@ -17,7 +17,14 @@ class Basket extends React.Component {
     if (!isAvailable) {
       return <li key={key}>Sorry {product ? product.name : 'product'} is out of stock!</li>;
     }
-    return <li key={key}>{`${count} x ${product.name} ${count * product.price} kr`}</li>;
+    return (
+      <li className='basket-line' key={key}>
+        {`${count} x ${product.name} ${count * product.price} kr`}
+        <button className='remove-from-basket' type='submit' onClick={() => this.props.deleteFromBasket(key)}>
+          X
+        </button>
+      </li>
+    );
   };
 
   render() {
