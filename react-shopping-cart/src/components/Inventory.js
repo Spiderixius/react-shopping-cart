@@ -12,7 +12,13 @@ class Inventory extends React.Component {
       <>
         <AddProduct addProduct={this.props.addProduct}></AddProduct>
         {Object.keys(this.props.products).map(key => (
-          <EditProduct key={key} index={key} product={this.props.products[key]} editProduct={this.props.editProduct} />
+          <EditProduct
+            key={key}
+            index={key}
+            product={this.props.products[key]}
+            editProduct={this.props.editProduct}
+            deleteProduct={this.props.deleteProduct}
+          />
         ))}
       </>
     );

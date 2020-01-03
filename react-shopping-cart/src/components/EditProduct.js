@@ -15,7 +15,7 @@ class EditProduct extends React.Component {
 
   render() {
     return (
-      <form className='product-form'>
+      <form className='product-form' onSubmit={() => this.props.deleteProduct(this.props.index)}>
         <input name='name' type='text' value={this.props.product.name} onChange={this.handleEdit} />
         <input name='price' type='number' value={this.props.product.price} onChange={this.handleEdit} />
         <select name='status' value={this.props.product.status} onChange={this.handleEdit}>

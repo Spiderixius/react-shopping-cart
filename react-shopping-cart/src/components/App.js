@@ -46,6 +46,17 @@ class App extends React.Component {
   };
 
   /**
+   * Delete the product by updating the state.
+   *
+   * @param key Delete the product with the specified key.
+   */
+  deleteProduct = key => {
+    const products = { ...this.state.products };
+    products[key] = null;
+    this.setState({ products });
+  };
+
+  /**
    * Adds a product to basket state. This is accomplished by copying the current state and
    * appending to said state.
    *
@@ -92,6 +103,7 @@ class App extends React.Component {
             <Inventory
               addProduct={this.addProduct}
               editProduct={this.editProduct}
+              deleteProduct={this.deleteProduct}
               products={this.state.products}
             ></Inventory>
           </div>
